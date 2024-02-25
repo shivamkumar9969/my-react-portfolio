@@ -1,0 +1,46 @@
+.nav-name {
+  font-family: "Dancing Script", cursive;
+  color: rgb(215, 215, 244);
+}
+
+.nav-custom {
+  font-family: "Dancing Script";
+}
+.res{
+  font-family: "Dancing Script", cursive; 
+}
+
+
+.glow-on-hover {
+  position: relative;
+  z-index: 0;
+}
+
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  background-size: 400%;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 0.5;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+
