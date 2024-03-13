@@ -1,46 +1,127 @@
 .nav-name {
   font-family: "Dancing Script", cursive;
   color: rgb(215, 215, 244);
+
+
 }
 
 .nav-custom {
-  font-family: "Dancing Script";
+  font-family: "";
 }
+
 .res{
-  font-family: "Dancing Script", cursive; 
+  font-family: ""; 
 }
 
-
-.glow-on-hover {
+.active {
   position: relative;
-  z-index: 0;
+  color: #2c2c2c
 }
 
-
-.glow-on-hover:before {
-  content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+.active-line {
   position: absolute;
-  background-size: 400%;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-}
-.glow-on-hover:active {
-  color: #000;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
 }
 
-.glow-on-hover:hover:before {
-  opacity: 0.5;
+.mobile-menu-icon {
+  cursor: pointer;
+  margin-right: 20px; /* Adjust the margin to move it towards the right */
 }
 
-@keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+.line {
+  width: 30px;
+  height: 2px;
+  background-color: black; /* Change line color to black */
+  margin: 6px 0;
+  transition: transform 0.3s ease; /* Add transition */
+}
+
+.rotate-45 {
+  transform: rotate(-45deg) translate(-5px, 5px); /* Rotate and translate first line */
+}
+
+.-rotate-45 {
+  transform: rotate(45deg) translate(-5px, -5px); /* Rotate and translate third line */
+}
+
+.opacity-0 {
+  opacity: 0; /* Hide second line */
+}
+
+.nav-links {
+  position: fixed;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  max-width: 60%; /* Adjust the maximum width as needed */
+  background-color: #8b8b8b; /* Set background color */
+  transition: transform 0.3s ease, max-width 0.3s ease; /* Add transition */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 30px;
+  font-size: 20px;
+  padding-top: 50px; /* Adjust padding top to position items below the cross icon */
+  transform: translateX(100%); /* Initially hide the menu off-screen */
+}
+
+.nav-links.show {
+  transform: translateX(0); /* Slide in navigation links from right */
 }
 
 
+.active-line {
+  height: 2px;
+  background-color: white; /* Adjust the active line color */
+}
+
+.active {
+  color: white; /* Adjust the active link color */
+}
+
+.go-back-button {
+  margin-top: 20px; /* Adjust margin as needed */
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+
+  
+}
+
+.go-back-button:hover {
+  text-decoration: underline;
+}
+
+
+.close-menu {
+  position: absolute;
+  top: 0px; /* Adjust top position as needed */
+  left: 5px; /* Adjust left position as needed */
+  padding: 5px; /* Increase padding for a larger size */
+  border: none;
+  color: rgb(0, 0, 0,0.8);
+  font-size: 34px; /* Increase font size for a larger icon */
+  cursor: pointer;
+  border-radius: 50%; /* Optional: Add border-radius for a circular shape */
+}
+
+
+/* Add these styles for the active button */
+.nav-links button.active {
+  color: #ffffff; /* Change the color to your desired active color */
+  font-weight: bold; /* Optionally, make the font bold for the active button */
+}
+
+/* Add these styles for the active line under the button */
+.nav-links button.active .active-line {
+  height: 2px;
+  background-color: white; /* Adjust the active line color */
+}
